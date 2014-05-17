@@ -61,7 +61,7 @@ public class DemoDataGenerator implements ModelDataJsonConstants {
     this.identityService = processEngine.getIdentityService();
     this.repositoryService = processEngine.getRepositoryService();
     
-    if (createDemoUsersAndGroups) {
+    /*if (createDemoUsersAndGroups) {
       LOGGER.info("Initializing demo groups");
       initDemoGroups();
       LOGGER.info("Initializing demo users");
@@ -81,7 +81,7 @@ public class DemoDataGenerator implements ModelDataJsonConstants {
     if (generateReportData) {
       LOGGER.info("Initializing demo report data");
       generateReportData();
-    }
+    }*/
   }
   
   public void setProcessEngine(ProcessEngine processEngine) {

@@ -44,6 +44,7 @@ public class HistoricDetailCollectionResourceTest extends BaseRestTestCase {
    */
   @Deployment
   public void testQueryDetail() throws Exception {
+	  
     HashMap<String, Object> processVariables = new HashMap<String, Object>();
     processVariables.put("stringVar", "Azerty");
     processVariables.put("intVar", 67890);

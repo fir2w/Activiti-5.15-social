@@ -13,7 +13,7 @@ angular.module('activitiApp')
         /*
          * Fetch tasks async when controller instantiates
          */
-        $http.get('http://localhost:8080/activiti-webapp-rest2/service/runtime/tasks').
+        $http.get('http://localhost:8080/activiti-rest/service/runtime/tasks').
             success(function (data, status, headers, config) {
                 showTasks(data);
             }).
@@ -27,7 +27,7 @@ angular.module('activitiApp')
         /*
          * Fetch user async when controller instantiates
          */
-        $http.get('http://localhost:8080/activiti-webapp-rest2/service/user/kermit/groups').
+        $http.get('http://localhost:8080/activiti-rest/service/user/kermit/groups').
             success(function (data, status, headers, config) {
                 var groups = [];
                 groups.push(noGroupElement);
@@ -65,7 +65,7 @@ angular.module('activitiApp')
          * Builds the URL
          */
         var createSearchUrl = function (page) {
-            var url = encodeURI('http://localhost:8080/activiti-webapp-rest2/service/runtime/tasks?size=' + $scope.pageSize);
+            var url = encodeURI('http://localhost:8080/activiti-rest/service/runtime/tasks?size=' + $scope.pageSize);
 
             // name
             if ($scope.searchQuery && $scope.searchQuery.length > 0) {
@@ -166,7 +166,7 @@ angular.module('activitiApp')
         $scope.claimTask = function(task) {
             $scope.loadingTasks = true;
 
-            $http.put('http://localhost:8080/activiti-webapp-rest2/service/task/' + task.id + "/claim").
+            $http.put('http://localhost:8080/activiti-rest/service/task/' + task.id + "/claim").
                 success(function (data, status, headers, config) {
                     // After a successful claim, simply refresh the task list with the current search params
                     executeSearch();
